@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#eeeeee"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_view_artist_cover"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img06"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:gravity="center_vertical"
+        android:height="40dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:hint="名字"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_view_birthday"
+        android:gravity="center_vertical"
+        android:height="40dp"
+        android:background="@color/white"
+        android:layout_marginTop="0.3dp"
+        android:hint="生日"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/text_view_weight"
+        android:gravity="center_vertical"
+        android:height="40dp"
+        android:background="@color/white"
+        android:layout_marginTop="0.3dp"
+        android:hint="体重"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_view_height"
+        android:gravity="center_vertical"
+        android:height="40dp"
+        android:background="@color/white"
+        android:layout_marginTop="0.3dp"
+        android:hint="身高"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.leychina.widget.tabindicator.TouchyWebView
+        android:id="@+id/artist_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/project_logo_image"
+        android:layout_width="112dp"
+        android:layout_height="86dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="20dp"
+        android:background="@color/color_primary" />
+
+    <TextView
+        android:id="@+id/project_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/project_logo_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@android:color/black"
+        android:layout_toRightOf="@id/project_logo_image"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="ppppp" />
+
+    <TextView
+        android:id="@+id/project_current_money"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/project_logo_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_alignParentTop="true"
+        android:text="llll" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/project_current_money"
+        android:layout_toRightOf="@id/project_logo_image"
+        android:id="@+id/project_remain_days"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kkkk"/>
+
+    <TextView
+        android:id="@+id/project_complish_rate"
+        android:layout_alignBottom="@id/project_logo_image"
+        android:layout_alignParentRight="true"
+        android:text="uuuu"
+        android:textSize="12sp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray"
+        />
+
+</RelativeLayout>

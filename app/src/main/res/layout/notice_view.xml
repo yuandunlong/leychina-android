@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeeeee">
+
+    <TableRow
+        android:layout_marginBottom="0.5dp"
+        android:layout_marginTop="0.5dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/notice_image_view"
+            android:layout_width="120dp"
+            android:layout_height="99dp"
+            android:layout_margin="2dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/notice_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="标题测试"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/notice_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="end"
+                android:maxLines="3" />
+
+        </LinearLayout>
+    </TableRow>
+</TableLayout>

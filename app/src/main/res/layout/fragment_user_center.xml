@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/setting_top"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@color/color_primary">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_marginTop="20dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/img04"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#ffffff"/>
+
+        <Button
+            android:layout_marginTop="5dp"
+            android:background="@color/color_primary_dark"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/profile_image"
+            android:id="@+id/go_to_login_btn"
+            android:text="立即登录"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0.3dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="收藏"
+                android:textColor="@color/tab_normal_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="分享"
+                android:textColor="@color/tab_normal_text" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <View
+        android:background="#eeeeee"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/my_order"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/setting_top"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/surpport"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="我的支持" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/apply_artist"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/setting_top"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/application"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="艺人申请" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/publish_project"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/setting_top"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/post"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="我的众酬" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_setting"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/setting_top"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="设置" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/setting_top"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/us"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="关于我们" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/contant_us"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/setting_top"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:drawableLeft="@drawable/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="客服" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+
+</LinearLayout>

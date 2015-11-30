@@ -1,0 +1,17 @@
+<com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_widget"
+    android:layout_width="match_parent"
+    myapp:direction="both"
+    android:layout_height="match_parent" >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/project_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@null"
+        android:scrollbars="vertical" />
+
+</com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>
