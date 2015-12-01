@@ -136,13 +136,29 @@
         </RelativeLayout>
 
 
-        <TextView
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="0.5dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:hint="\t运费" />
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:hint="\t运费" />
+
+            <TextView
+                android:id="@+id/delivery_money_text_view"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center_vertical" />
+        </RelativeLayout>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -168,6 +184,7 @@
 
 
         <Button
+            android:id="@+id/submit_order_btn"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"

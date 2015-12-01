@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LeyChinaAndroid.iml" filepath="$PROJECT_DIR$/LeyChinaAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leychina-android.iml" filepath="$PROJECT_DIR$/leychina-android.iml" />
     </modules>
   </component>
 </project>

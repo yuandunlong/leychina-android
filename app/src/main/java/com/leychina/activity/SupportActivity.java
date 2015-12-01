@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +13,7 @@ import com.leychina.http.OkHttpClientManager;
 import com.leychina.model.Address;
 import com.leychina.model.Payback;
 import com.leychina.model.ResultAddress;
+import com.leychina.model.ResultOrder;
 import com.leychina.utils.StringUtil;
 import com.leychina.value.Constant;
 import com.squareup.okhttp.Request;
@@ -31,10 +31,11 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
 
     Button plusAmountBtn;
     Button minusAmountBtn;
+    Button submitOrderBtn;
     Address address;
-    TextView amountTextView,supportMoneyTextView,totalMoneyTextView,addressTextView;
+    TextView amountTextView,supportMoneyTextView,totalMoneyTextView,addressTextView ,deliveryMoneyTextView;
 
-    int currentAmout;
+    int currentAmout=1;
 
     public static  void start(Context from,Payback payback){
         Intent intent=new Intent(from,SupportActivity.class);
@@ -61,10 +62,15 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
         supportMoneyTextView.setText(StringUtil.getMoneyText(payback.getMoney()));
 
         totalMoneyTextView= (TextView) findViewById(R.id.total_money_text_view);
-        totalMoneyTextView.setText(StringUtil.getMoneyText(payback.getMoney()));
+        totalMoneyTextView.setText(payback.getMoney()*currentAmout+payback.getDeliveryMoney()+"");
 
         addressTextView= (TextView) findViewById(R.id.address_text_view);
         addressTextView.setOnClickListener(this);
+
+        deliveryMoneyTextView= (TextView) findViewById(R.id.delivery_money_text_view);
+        deliveryMoneyTextView.setText(payback.getDeliveryMoney()+"");
+        submitOrderBtn= (Button) findViewById(R.id.submit_order_btn);
+        submitOrderBtn.setOnClickListener(this);
         loadUserDefaultAddress();
 
 
@@ -83,6 +89,9 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.address_text_view:
                 ChooseAddressActivity.start(this);
                 break;
+            case R.id.submit_order_btn:
+                submitOrder();
+                break;
         }
 
     }
@@ -93,6 +102,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
         float supportMoney= payback.getMoney()*currentAmout;
         supportMoneyTextView.setText(StringUtil.getMoneyText(supportMoney));
         amountTextView.setText(currentAmout+"");
+        totalMoneyTextView.setText(payback.getMoney()*currentAmout+payback.getDeliveryMoney()+"");
 
     }
 
@@ -102,6 +112,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
             amountTextView.setText(currentAmout+"");
             float supportMoney= payback.getMoney()*currentAmout;
             supportMoneyTextView.setText(StringUtil.getMoneyText(supportMoney));
+            totalMoneyTextView.setText(payback.getMoney()*currentAmout+payback.getDeliveryMoney()+"");
         }
 
     }
@@ -136,7 +147,27 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
             jsonObject.put("payback_id",payback.getId());
             jsonObject.put("project_id",payback.getProjectId());
             jsonObject.put("amount",currentAmout);
-            jsonObject.put("address_id",address.get)
+            jsonObject.put("address_id",address.getId());
+            jsonObject.put("delivery_money",0);
+
+                OkHttpClientManager.postAsyn(Constant.API_PATH.SUBMIT_ORDER + App.user.getAccessToken(), jsonObject, new OkHttpClientManager.ResultCallback<ResultOrder>() {
+
+                @Override
+                public void onError(Request request, Exception e) {
+                    e.printStackTrace();
+                }
+
+                @Override
+                public void onResponse(ResultOrder response) {
+                    if(response.isOK()){
+
+                        response.getOrder();
+                        PayOrderActivity.start(response.getOrder(),address,SupportActivity.this);
+
+                    }
+
+                }
+            });
         } catch (JSONException e) {
             e.printStackTrace();
         }
